@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rally Day Kiosk — Spin the Wheel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2300d9ff'/></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="bg-decoration">
+  <div class="bg-blob"></div>
+  <div class="bg-blob"></div>
+  <div class="bg-blob"></div>
+</div>
+<div class="bg-grid"></div>
+
+
+<main id="kiosk-page" class="page">
+  <div class="kiosk-content">
+ 
+    <h1 class="kiosk-title">Spin the Wheel</h1>
+    <p class="kiosk-subtitle"></p>
+    <div class="kiosk-stats">
+      <div class="stat-card">
+        <div class="stat-label">Entries</div>
+        <div class="stat-value pink" id="entryCountKiosk">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Spins Done</div>
+        <div class="stat-value blue" id="spinCountKiosk">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Prizes Left</div>
+        <div class="stat-value" id="prizesLeft">0</div>
+      </div>
+    </div>
+    <button class="kiosk-btn" id="showQRBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+        <line x1="14" y1="14" x2="14" y2="21"></line>
+        <line x1="18" y1="14" x2="18" y2="18"></line>
+        <line x1="21" y1="18" x2="21" y2="21"></line>
+      </svg>
+      Show QR Code
+    </button>
+  </div>
+  <div class="kiosk-marquee">
+    <div class="marquee-content" id="marqueeContent"></div>
+  </div>
+</main>
+
+<div class="overlay" id="qrModal">
+  <div class="overlay-card">
+    <h2 class="modal-title">Join the Spin!</h2>
+    <p class="modal-subtitle">Point your phone camera here</p>
+    <img id="qrImage" alt="QR Code" style="display:block;max-width:100%;border-radius:12px">
+    <button class="modal-close" id="closeQRBtn">Close</button>
+  </div>
+</div>
+
+<canvas class="confetti-canvas" id="confettiCanvas"></canvas>
+<div class="toast" id="toast"></div>
+
+<script src="../js/shared.js"></script>
+<script src="../js/kiosk.js"></script>
+</body>
+</html>

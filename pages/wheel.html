@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prize Wheel — Rally Day</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ffd60a'/></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="bg-decoration">
+  <div class="bg-blob"></div>
+  <div class="bg-blob"></div>
+  <div class="bg-blob"></div>
+</div>
+<div class="bg-grid"></div>
+
+
+<main id="wheel-page" class="page">
+  <div class="wheel-header">
+    <h1 class="wheel-title">Prize Wheel</h1>
+  </div>
+  <div class="wheel-layout">
+    <div class="wheel-stage">
+      <div class="wheel-container">
+        <div class="wheel-pointer" id="wheelPointer">
+          <svg viewBox="0 0 50 65" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="25" cy="18" r="16" fill="#ffd60a" stroke="#fff" stroke-width="4"/>
+            <path d="M 25 62 L 8 22 L 42 22 Z" fill="#ffd60a" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <canvas id="wheelCanvas" width="500" height="500"></canvas>
+      </div>
+      <div class="wheel-controls">
+        <button class="wheel-btn primary pulse" id="spinBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+          SPIN
+        </button>
+        <label class="toggle-label">
+          <input type="checkbox" class="toggle-input" id="removeWinnerToggle" checked>
+          Remove winner
+        </label>
+        <button class="wheel-btn danger" id="resetBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+          Reset
+        </button>
+        <button class="wheel-btn" id="refreshBtn" title="Refresh entries">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+          Refresh
+        </button>
+      </div>
+    </div>
+    <div class="entries-panel">
+    <div class="entries-header">
+      <div class="entries-header-left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="entries-title">Players</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <div class="sync-dot" id="syncDot" title="Synced"></div>
+        <div class="entries-count" id="entriesCount">0</div>
+      </div>
+    </div>
+      <div class="entries-list" id="entriesList"></div>
+      <div class="winners-section" id="winnersSection" style="display:none">
+        <div class="winners-title">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6h20v8a10 10 0 0 1-20 0V6z" fill="currentColor" fill-opacity="0.15"/><path d="M14 10H8a4 4 0 0 0 4 4h2M34 10h6a4 4 0 0 1-4 4h-2"/><path d="M24 24v6M18 36h12M16 42h16M20 36v6M28 36v6"/></svg>
+          Recent Winners
+        </div>
+        <div id="winnersList"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="overlay" id="winnerOverlay">
+  <div class="overlay-card winner-card">
+    <div class="winner-icon">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 6h20v8a10 10 0 0 1-20 0V6z" fill="currentColor" fill-opacity="0.15"/>
+        <path d="M14 10H8a4 4 0 0 0 4 4h2M34 10h6a4 4 0 0 1-4 4h-2"/>
+        <path d="M24 24v6M18 36h12M16 42h16M20 36v6M28 36v6"/>
+      </svg>
+    </div>
+    <div class="winner-label">We have a winner!</div>
+    <div class="winner-name" id="winnerName"></div>
+    <button class="winner-btn" id="winnerCloseBtn">Continue</button>
+  </div>
+</div>
+
+<canvas class="confetti-canvas" id="confettiCanvas"></canvas>
+<div class="toast" id="toast"></div>
+
+<script src="../js/shared.js"></script>
+<script src="../js/wheel.js"></script>
+</body>
+</html>

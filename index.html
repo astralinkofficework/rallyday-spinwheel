@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rally Day — Spin the Wheel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ffd60a'/></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="bg-decoration">
+  <div class="bg-blob"></div>
+  <div class="bg-blob"></div>
+  <div class="bg-blob"></div>
+</div>
+<div class="bg-grid"></div>
+
+
+<main class="page" style="display:flex;align-items:center;justify-content:center;padding:3rem 1rem">
+  <div style="max-width:1100px;width:100%;text-align:center">
+    <div style="margin-bottom:2.5rem">
+      <h1 class="display" style="font-size:clamp(2.5rem,8vw,5rem);line-height:.95;background:linear-gradient(135deg,var(--yellow),var(--pink),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-transform:uppercase;margin-bottom:.75rem;animation:titleGlow 3s ease-in-out infinite">
+        Rally Day 2025
+      </h1>
+      <p style="color:var(--text-muted);font-size:clamp(1rem,3vw,1.35rem);font-weight:500;max-width:600px;margin:0 auto">
+        Three ways to join the fun. Enter your name, watch the live draw, or spin the wheel yourself.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;text-align:left">
+      <a href="pages/join.html" class="hub-card" style="text-decoration:none;color:inherit">
+        <div class="hub-icon" style="color:var(--pink)">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="20" r="14"/><circle cx="24" cy="20" r="2.5" fill="currentColor"/><path d="M24 6v28M10 20h28M14.1 10.1l19.8 19.8M33.9 10.1L14.1 29.9"/><path d="M18 44h12M20 44V34M28 44V34"/></svg>
+        </div>
+        <div class="hub-title">Join the Spin</div>
+        <div class="hub-desc">Enter your name to throw your hat in the ring for epic rally prizes.</div>
+        <div class="hub-cta">Open Form <span style="font-size:.85em;margin-left:.3rem">&#8594;</span></div>
+      </a>
+
+      <a href="pages/kiosk.html" class="hub-card" style="text-decoration:none;color:inherit">
+        <div class="hub-icon" style="color:var(--blue)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="hub-title">Kiosk Display</div>
+        <div class="hub-desc">Live rally stats, QR code entry, and real-time updates for the crowd.</div>
+        <div class="hub-cta">Open Kiosk <span style="font-size:.85em;margin-left:.3rem">&#8594;</span></div>
+      </a>
+
+      <a href="pages/admin.html" class="hub-card" style="text-decoration:none;color:inherit">
+        <div class="hub-icon" style="color:var(--red)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <div class="hub-title">Admin Panel</div>
+        <div class="hub-desc">Manage entries, record winners, ban users, and control submissions.</div>
+        <div class="hub-cta">Open Admin <span style="font-size:.85em;margin-left:.3rem">&#8594;</span></div>
+      </a>
+
+      <a href="pages/wheel.html" class="hub-card" style="text-decoration:none;color:inherit">
+        <div class="hub-icon" style="color:var(--yellow)">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="20" r="14"/><circle cx="24" cy="20" r="2.5" fill="currentColor"/><path d="M24 6v28M10 20h28M14.1 10.1l19.8 19.8M33.9 10.1L14.1 29.9"/><path d="M18 44h12M20 44V34M28 44V34"/></svg>
+        </div>
+        <div class="hub-title">Prize Wheel</div>
+        <div class="hub-desc">Spin the wheel, watch the excitement, and crown the rally champion.</div>
+        <div class="hub-cta">Spin Now <span style="font-size:.85em;margin-left:.3rem">&#8594;</span></div>
+      </a>
+    </div>
+
+    <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--glass-border);display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;color:var(--text-muted);font-size:.85rem;font-weight:600">
+      <span>Shared state across all pages</span>
+      <span style="color:var(--glass-border)">|</span>
+      <span>Cross-tab sync</span>
+      <span style="color:var(--glass-border)">|</span>
+      <span>Sound effects</span>
+      <span style="color:var(--glass-border)">|</span>
+      <span>Confetti celebrations</span>
+    </div>
+  </div>
+</main>
+
+<script src="js/shared.js"></script>
+<script>
+  initSoundToggle();
+</script>
+</body>
+</html>
