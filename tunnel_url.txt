@@ -1,0 +1,5 @@
+PUBLIC_URL=https://interface-kelly-navigation-wallace.trycloudflare.com
+JOIN_URL=https://cleanuri.com/rEw192
+WHEEL_URL=https://cleanuri.com/PlXMnN
+KIOSK_URL=https://cleanuri.com/4JX8le
+ADMIN_URL=https://cleanuri.com/wlM0Rj
